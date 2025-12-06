@@ -18,14 +18,9 @@ return new class extends Migration
             $table->double('precio');
             $table->date('expiracion');
             $table->integer('stock');
-            $table->unsignedInteger('idProveedor');
+            $table->integer('idProveedor')->unsigned();
+            $table->foreign('idProveedor')->references('idProveedor')->on('proveedores')->onDelete('cascade');
             $table->timestamps();
-
-            $table->foreign('idProveedor')
-                  ->references('idProveedor')
-                  ->on('proveedores')
-                  ->onDelete('cascade')
-                  ->onUpdate('cascade');
         });
     }
 

@@ -45,3 +45,6 @@ use Illuminate\Http\Request;
     });
 
    // Route::resource ('rutanueva/vista', VistaController::class);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
